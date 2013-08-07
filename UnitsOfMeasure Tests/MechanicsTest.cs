@@ -8,7 +8,7 @@ using UnitsOfMeasure.Angle;
 namespace UnitsOfMeasure
 {
     [TestClass]
-    public class UnitTest1
+    public class MechanicsTest
     {
         [TestMethod]
         public void AccelerateSomething()

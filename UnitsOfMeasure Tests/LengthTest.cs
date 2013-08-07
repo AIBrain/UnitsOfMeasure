@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitsOfMeasure;
 using UnitsOfMeasure.Length;
 using UnitsOfMeasure.Length.Imperial;
+using UnitsOfMeasure.Length.Metric;
 
 namespace UnitsOfMeasure_Tests
 {
@@ -42,6 +43,13 @@ namespace UnitsOfMeasure_Tests
             var f = new Feet { Value = 7920 };
             Miles m = f;
             Assert.AreEqual(1.5, m.Value);
+        }
+        [TestMethod]
+        public void FeetToMeters()
+        {
+            var feet = new Feet { Value = 35 };
+            Meters meter = feet;
+            Assert.AreEqual(10.668, meter.Value, 1e-10);
         }
 
         [TestMethod]
