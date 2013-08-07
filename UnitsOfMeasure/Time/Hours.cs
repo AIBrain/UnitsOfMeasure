@@ -8,6 +8,12 @@ namespace UnitsOfMeasure.Time
 {
     public class Hours : Time
     {
+        public static explicit operator Hours(double v)
+        {
+            return new Hours { Value = v };
+        }
+
+
         public static implicit operator Hours(DateTime value)
         {
             return new Hours

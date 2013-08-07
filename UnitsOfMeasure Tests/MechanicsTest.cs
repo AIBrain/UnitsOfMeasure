@@ -11,6 +11,27 @@ namespace UnitsOfMeasure
     public class UnitTest1
     {
         [TestMethod]
+        public void AccelerateSomething()
+        {
+            // setup an object with physical properties
+            var accel = new Acceleration<Feet, Seconds> { Value = 10 };
+            var spd = new Velocity<Feet, Seconds> { Value = 3 };
+            var disp = new Feet { Value = 376 };
+
+            // calculate the change over time and apply the changes
+            var time = new Seconds { Value = 5 };
+            Delta<Velocity<Feet, Seconds>> dspd = accel.Multiply(time);
+            spd = dspd.Add(spd);
+            Delta<Feet> ddisp = spd.Multiply(time);
+            disp = disp.Add(ddisp);
+
+            Assert.AreEqual(50, dspd.Value);
+            Assert.AreEqual(53, spd.Value);
+            Assert.AreEqual(265, ddisp.Value);
+            Assert.AreEqual(641, disp.Value);
+        }
+
+        [TestMethod]
         public void SpeedAndTimeGiveDisplacement()
         {
             var spd = new Velocity<Feet, Seconds> { Value = 10 };
@@ -21,30 +42,11 @@ namespace UnitsOfMeasure
         }
 
         [TestMethod]
-        public void AccelerationAndTimeGiveSpeed()
-        {
-            var accel = new Acceleration<Feet, Seconds> { Value = 10 };
-            var time = new Seconds { Value = 5 };
-            var dspd = accel.Multiply(time);
-            Assert.IsInstanceOfType(dspd, typeof(Delta<Velocity<Feet, Seconds>>));
-            Assert.AreEqual(50, dspd.Value);
-
-            var spd = dspd.Add(new Velocity<Feet, Seconds> { Value = 3 });
-            Assert.IsInstanceOfType(spd, typeof(Velocity<Feet, Seconds>));
-            Assert.AreEqual(53, spd.Value);
-
-            var disp = spd.Multiply(time);
-            Assert.IsInstanceOfType(disp, typeof(Delta<Feet>));
-            Assert.AreEqual(265, disp.Value);
-        }
-
-        [TestMethod]
         public void SpeedOverTimeGivesAcceleration()
         {
             var dspd = new Delta<Velocity<Feet, Seconds>> { Value = 10 };
             var dt = new Delta<Seconds> { Value = 5 };
-            var accel = dspd.Divide(dt);
-            Assert.IsInstanceOfType(accel, typeof(Acceleration<Feet, Seconds>));
+            Acceleration<Feet, Seconds> accel = dspd.Divide(dt);
             Assert.AreEqual(2, accel.Value);
         }
 
@@ -53,8 +55,7 @@ namespace UnitsOfMeasure
         {
             var spd = new Velocity<Feet, Seconds> { Value = 10 };
             var time = new Hours { Value = 1 };
-            var ddist = spd.Multiply(time);
-            Assert.IsInstanceOfType(ddist, typeof(Delta<Feet>));
+            Delta<Feet> ddist = spd.Multiply(time);
             Assert.AreEqual(36000, ddist.Value);
         }
 

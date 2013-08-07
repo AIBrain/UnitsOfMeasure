@@ -8,6 +8,11 @@ namespace UnitsOfMeasure.Time
 {
     public class Milliseconds : Time
     {
+        public static explicit operator Milliseconds(double v)
+        {
+            return new Milliseconds { Value = v };
+        }
+
         public static implicit operator Milliseconds(DateTime value)
         {
             return new Milliseconds

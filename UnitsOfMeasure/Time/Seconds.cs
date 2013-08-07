@@ -8,6 +8,11 @@ namespace UnitsOfMeasure.Time
 {
     public class Seconds : Time
     {
+        public static explicit operator Seconds(double v)
+        {
+            return new Seconds { Value = v };
+        }
+
         public static implicit operator Seconds(DateTime value)
         {
             return new Seconds

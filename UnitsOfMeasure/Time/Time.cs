@@ -18,9 +18,5 @@ namespace UnitsOfMeasure.Time
         {
             return new T { Value = a.Value * b.Value };
         }
-        //Acceleration<T, U> : Composite<Delta<Velocity<T, U>>, Reciprocal<Delta<U>>>
-        //    Velocity<T, U> : Composite<Delta<T>, Reciprocal<Delta<U>>>
-                
-        //Acceleration<T, U> : Composite<Delta<Composite<Delta<T>, Reciprocal<Delta<U>>>>, Reciprocal<Delta<U>>>
     }
 }

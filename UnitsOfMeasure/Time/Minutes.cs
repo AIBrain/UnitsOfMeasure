@@ -8,6 +8,11 @@ namespace UnitsOfMeasure.Time
 {
     public class Minutes : Time
     {
+        public static explicit operator Minutes(double v)
+        {
+            return new Minutes { Value = v };
+        }
+
         public static implicit operator Minutes(DateTime value)
         {
             return new Minutes
