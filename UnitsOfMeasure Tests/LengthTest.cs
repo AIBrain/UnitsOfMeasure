@@ -51,5 +51,15 @@ namespace UnitsOfMeasure_Tests
             Inches i = m;
             Assert.AreEqual(221760, i.Value);
         }
+
+
+        [TestMethod]
+        public void AddInchesToFeet()
+        {
+            var f = new Feet { Value = 3.5 };
+            var i = new Delta<Inches> { Value = 6 };
+            f = f.Add(i);
+            Assert.AreEqual(4, f.Value);
+        }
     }
 }
