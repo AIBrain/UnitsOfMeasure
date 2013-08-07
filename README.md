@@ -41,6 +41,20 @@ Assert.AreEqual(265, ddisp.Value);
 Assert.AreEqual(641, disp.Value);
 ```
 
+Convert Feet to Meters
+```c#
+var feet = new Feet { Value = 35 };
+Meters meter = feet;
+Assert.AreEqual(10.668, meter.Value, 1e-10);
+```
+
+Calculate the Cosine of an angle in Degrees
+```c#
+var d = new Degrees { Value = 45 };
+var v = d.Cos();
+Assert.AreEqual(Math.Sqrt(2) / 2, v);
+```
+
 Halp!
 =====
 I'm a programmer, not a physicist. I have a good handle on arithmetic
