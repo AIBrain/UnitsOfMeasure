@@ -20,9 +20,9 @@ namespace UnitsOfMeasure
 
             // calculate the change over time and apply the changes
             var time = new Seconds { Value = 5 };
-            Delta<Velocity<Feet, Seconds>> dspd = accel.Multiply(time);
+            Velocity<Feet, Seconds> dspd = accel.Multiply(time);
             spd = dspd.Add(spd);
-            Delta<Feet> ddisp = spd.Multiply(time);
+            Feet ddisp = spd.Multiply(time);
             disp = disp.Add(ddisp);
 
             Assert.AreEqual(50, dspd.Value);
@@ -37,11 +37,11 @@ namespace UnitsOfMeasure
             var spd = new Velocity<Miles, Hours> { Value = 55 };
             var disp = new Feet { Value = 0 };
             var time = new Seconds { Value = 5 };
-            Delta<Miles> ddisp = spd.Multiply(time);
-            disp = disp.Add(ddisp);
+            Miles ddisp = spd.Multiply(time);
+            disp = disp.Add((Feet)ddisp);
 
-            Assert.AreEqual(403.33333333333333333333333333333, ddisp.Value);
-            Assert.AreEqual(403.33333333333333333333333333333, disp.Value);
+            Assert.AreEqual(0.07638888888888888888888888888889, ddisp.Value, 1e-10);
+            Assert.AreEqual(403.33333333333333333333333333333, disp.Value, 1e-10);
         }
 
         [TestMethod]
@@ -49,16 +49,15 @@ namespace UnitsOfMeasure
         {
             var spd = new Velocity<Feet, Seconds> { Value = 10 };
             var time = new Seconds { Value = 5 };
-            var disp = spd.Multiply(time);
-            Assert.IsInstanceOfType(disp, typeof(Delta<Feet>));
+            Feet disp = spd.Multiply(time);
             Assert.AreEqual(50, disp.Value);
         }
 
         [TestMethod]
         public void SpeedOverTimeGivesAcceleration()
         {
-            var dspd = new Delta<Velocity<Feet, Seconds>> { Value = 10 };
-            var dt = new Delta<Seconds> { Value = 5 };
+            var dspd = new Velocity<Feet, Seconds> { Value = 10 };
+            var dt = new Seconds { Value = 5 };
             Acceleration<Feet, Seconds> accel = dspd.Divide(dt);
             Assert.AreEqual(2, accel.Value);
         }
@@ -68,7 +67,7 @@ namespace UnitsOfMeasure
         {
             var spd = new Velocity<Feet, Seconds> { Value = 10 };
             var time = new Hours { Value = 1 };
-            Delta<Feet> ddist = spd.Multiply(time);
+            Feet ddist = spd.Multiply(time);
             Assert.AreEqual(36000, ddist.Value);
         }
 

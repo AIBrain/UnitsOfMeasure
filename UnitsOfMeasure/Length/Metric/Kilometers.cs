@@ -43,47 +43,5 @@ namespace UnitsOfMeasure.Length.Metric
         {
             return new Kilometers { Value = obj.Value * 1.609344 };
         }
-
-        public Kilometers Add(Delta<Imperial.Inches> obj)
-        {
-            var i = new Imperial.Inches { Value = obj.Value };
-            Kilometers v2 = i;
-            return this.Add(new Delta<Kilometers> { Value = v2.Value });
-        }
-
-        public Kilometers Add(Delta<Imperial.Feet> obj)
-        {
-            var v = new Imperial.Feet { Value = obj.Value };
-            Kilometers v2 = v;
-            return this.Add(new Delta<Kilometers> { Value = v2.Value });
-        }
-
-        public Kilometers Add(Delta<Imperial.Miles> obj)
-        {
-            var v = new Imperial.Miles { Value = obj.Value };
-            Kilometers v2 = v;
-            return this.Add(new Delta<Kilometers> { Value = v2.Value });
-        }
-
-        public Kilometers Add(Delta<Metric.Millimeters> obj)
-        {
-            var v = new Millimeters { Value = obj.Value };
-            Kilometers v2 = v;
-            return this.Add(new Delta<Kilometers> { Value = v2.Value });
-        }
-
-        public Kilometers Add(Delta<Metric.Centimeters> obj)
-        {
-            var v = new Centimeters { Value = obj.Value };
-            Kilometers v2 = v;
-            return this.Add(new Delta<Kilometers> { Value = v2.Value });
-        }
-
-        public Kilometers Add(Delta<Metric.Meters> obj)
-        {
-            var v = new Meters { Value = obj.Value };
-            Kilometers v2 = v;
-            return this.Add(new Delta<Kilometers> { Value = v2.Value });
-        }
     }
 }

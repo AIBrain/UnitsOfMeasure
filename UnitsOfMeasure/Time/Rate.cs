@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitsOfMeasure
 {
-    public class Rate<T, U> : Composite<Delta<T>, Reciprocal<Delta<U>>>
+    public class Rate<T, U> : Composite<T, Reciprocal<U>>
         where T : UnitBase, new()
         where U : Time.Time, new()
     {

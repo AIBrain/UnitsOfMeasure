@@ -42,48 +42,5 @@ namespace UnitsOfMeasure.Length.Imperial
         {
             return new Miles { Value = obj.Value * 0.000003937 };
         }
-
-        public Miles Add(Delta<Inches> obj)
-        {
-            var i = new Inches { Value = obj.Value };
-            Miles v2 = i;
-            return this.Add(new Delta<Miles> { Value = v2.Value });
-        }
-
-
-        public Miles Add(Delta<Feet> obj)
-        {
-            var v = new Feet { Value = obj.Value };
-            Miles v2 = v;
-            return this.Add(new Delta<Miles> { Value = v2.Value });
-        }
-
-        public Miles Add(Delta<Metric.Millimeters> obj)
-        {
-            var v = new Metric.Centimeters { Value = obj.Value };
-            Miles v2 = v;
-            return this.Add(new Delta<Miles> { Value = v2.Value });
-        }
-
-        public Miles Add(Delta<Metric.Centimeters> obj)
-        {
-            var v = new Metric.Centimeters { Value = obj.Value };
-            Miles v2 = v;
-            return this.Add(new Delta<Miles> { Value = v2.Value });
-        }
-
-        public Miles Add(Delta<Metric.Meters> obj)
-        {
-            var v = new Metric.Meters { Value = obj.Value };
-            Miles v2 = v;
-            return this.Add(new Delta<Miles> { Value = v2.Value });
-        }
-
-        public Miles Add(Delta<Metric.Kilometers> obj)
-        {
-            var v = new Metric.Kilometers { Value = obj.Value };
-            Miles v2 = v;
-            return this.Add(new Delta<Miles> { Value = v2.Value });
-        }
     }
 }

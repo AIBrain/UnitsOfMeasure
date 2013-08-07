@@ -14,14 +14,14 @@ namespace UnitsOfMeasure.Mechanics
 
     public static class AccelerationMixin
     {
-        public static Delta<Velocity<T, U>> Multiply<T, U>(this Acceleration<T, U> a, U b)
+        public static Velocity<T, U> Multiply<T, U>(this Acceleration<T, U> a, U b)
             where T : SpatialProperty, new()
             where U : Time.Time, new()
         {
-            return new Delta<Velocity<T, U>> { Value = a.Value * b.Value };
+            return new Velocity<T, U> { Value = a.Value * b.Value };
         }
 
-        public static Acceleration<T, U> Divide<T, U>(this Delta<Velocity<T, U>> a, Delta<U> b)
+        public static Acceleration<T, U> Divide<T, U>(this Velocity<T, U> a, U b)
             where T : SpatialProperty, new()
             where U : Time.Time, new()
         {

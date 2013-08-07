@@ -65,8 +65,8 @@ namespace UnitsOfMeasure_Tests
         public void AddInchesToFeet()
         {
             var f = new Feet { Value = 3.5 };
-            var i = new Delta<Inches> { Value = 6 };
-            f = f.Add(i);
+            var i = new Inches { Value = 6 };
+            f = f.Add((Feet)i);
             Assert.AreEqual(4, f.Value);
         }
     }

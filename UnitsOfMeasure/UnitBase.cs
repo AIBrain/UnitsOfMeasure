@@ -18,24 +18,14 @@ namespace UnitsOfMeasure
     
     public static class UnitBaseMixin
     {
-        public static T Add<T>(this T a, Delta<T> b) where T : UnitBase, new()
+        public static T Add<T>(this T a, T b) where T : UnitBase, new()
         {
             return new T { Value = a.Value + b.Value };
         }
 
-        public static T Add<T>(this Delta<T> a, T b) where T : UnitBase, new()
-        {
-            return new T { Value = a.Value + b.Value };
-        }
-
-        public static T Subtract<T>(this T a, Delta<T> b) where T : UnitBase, new()
+        public static T Subtract<T>(this T a, T b) where T : UnitBase, new()
         {
             return new T { Value = a.Value - b.Value };
-        }
-
-        public static Delta<T> Subtract<T>(this T a, T b) where T : UnitBase, new()
-        {
-            return new Delta<T> { Value = a.Value - b.Value };
         }
 
         public static T Multiply<T>(this T a, double b) where T : UnitBase, new()

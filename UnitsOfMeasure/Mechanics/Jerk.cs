@@ -14,14 +14,14 @@ namespace UnitsOfMeasure.Mechanics
 
     public static class JerkMixin
     {
-        public static Delta<Acceleration<M, T>> Multiply<M, T>(this Jerk<M, T> a, T b)
+        public static Acceleration<M, T> Multiply<M, T>(this Jerk<M, T> a, T b)
             where M : SpatialProperty, new()
             where T : Time.Time, new()
         {
-            return new Delta<Acceleration<M, T>> { Value = a.Value * b.Value };
+            return new Acceleration<M, T> { Value = a.Value * b.Value };
         }
 
-        public static Jerk<M, T> Divide<M, T>(this Delta<Acceleration<M, T>> a, Delta<T> b)
+        public static Jerk<M, T> Divide<M, T>(this Acceleration<M, T> a, T b)
             where M : SpatialProperty, new()
             where T : Time.Time, new()
         {

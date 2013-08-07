@@ -44,7 +44,7 @@ namespace UnitsOfMeasure.Angle
             return new Radians { Value = Math.Atan2(a, b) };
         }
 
-        public static Radians Atan2<T>(this Delta<T> a, Delta<T> b) where T : SpatialProperty, new()
+        public static Radians Atan2<T>(this T a, T b) where T : SpatialProperty, new()
         {
             return new Radians { Value = Math.Atan2(a.Value, b.Value) };
         }

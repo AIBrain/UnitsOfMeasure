@@ -43,47 +43,5 @@ namespace UnitsOfMeasure.Length.Metric
         {
             return new Millimeters { Value = obj.Value * 1609344 };
         }
-
-        public Millimeters Add(Delta<Imperial.Inches> obj)
-        {
-            var i = new Imperial.Inches { Value = obj.Value };
-            Millimeters v2 = i;
-            return this.Add(new Delta<Millimeters> { Value = v2.Value });
-        }
-
-        public Millimeters Add(Delta<Imperial.Feet> obj)
-        {
-            var v = new Imperial.Feet { Value = obj.Value };
-            Millimeters v2 = v;
-            return this.Add(new Delta<Millimeters> { Value = v2.Value });
-        }
-
-        public Millimeters Add(Delta<Imperial.Miles> obj)
-        {
-            var v = new Imperial.Miles { Value = obj.Value };
-            Millimeters v2 = v;
-            return this.Add(new Delta<Millimeters> { Value = v2.Value });
-        }
-
-        public Millimeters Add(Delta<Metric.Centimeters> obj)
-        {
-            var v = new Centimeters { Value = obj.Value };
-            Millimeters v2 = v;
-            return this.Add(new Delta<Millimeters> { Value = v2.Value });
-        }
-
-        public Millimeters Add(Delta<Metric.Meters> obj)
-        {
-            var v = new Meters { Value = obj.Value };
-            Millimeters v2 = v;
-            return this.Add(new Delta<Millimeters> { Value = v2.Value });
-        }
-
-        public Millimeters Add(Delta<Metric.Kilometers> obj)
-        {
-            var v = new Kilometers { Value = obj.Value };
-            Millimeters v2 = v;
-            return this.Add(new Delta<Millimeters> { Value = v2.Value });
-        }
     }
 }

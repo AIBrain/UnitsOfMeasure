@@ -42,46 +42,5 @@ namespace UnitsOfMeasure.Length.Imperial
         {
             return new Feet { Value = obj.Value * 0.0032808 };
         }
-
-        public Feet Add(Delta<Inches> obj){
-            var v = new Inches { Value = obj.Value };
-            Feet v2 = v;
-            return this.Add(new Delta<Feet> { Value = v2.Value });
-        }
-
-        public Feet Add(Delta<Miles> obj)
-        {
-            var i = new Miles { Value = obj.Value };
-            Feet v2 = i;
-            return this.Add(new Delta<Feet> { Value = v2.Value });
-        }
-
-        public Feet Add(Delta<Metric.Millimeters> obj)
-        {
-            var v = new Metric.Centimeters { Value = obj.Value };
-            Feet v2 = v;
-            return this.Add(new Delta<Feet> { Value = v2.Value });
-        }
-
-        public Feet Add(Delta<Metric.Centimeters> obj)
-        {
-            var v = new Metric.Centimeters { Value = obj.Value };
-            Feet v2 = v;
-            return this.Add(new Delta<Feet> { Value = v2.Value });
-        }
-
-        public Feet Add(Delta<Metric.Meters> obj)
-        {
-            var v = new Metric.Meters { Value = obj.Value };
-            Feet v2 = v;
-            return this.Add(new Delta<Feet> { Value = v2.Value });
-        }
-
-        public Feet Add(Delta<Metric.Kilometers> obj)
-        {
-            var v = new Metric.Kilometers { Value = obj.Value };
-            Feet v2 = v;
-            return this.Add(new Delta<Feet> { Value = v2.Value });
-        }
     }
 }
