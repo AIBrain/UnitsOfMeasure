@@ -32,6 +32,19 @@ namespace UnitsOfMeasure
         }
 
         [TestMethod]
+        public void DriveForAFewSeconds()
+        {
+            var spd = new Velocity<Miles, Hours> { Value = 55 };
+            var disp = new Feet { Value = 0 };
+            var time = new Seconds { Value = 5 };
+            Delta<Miles> ddisp = spd.Multiply(time);
+            disp = disp.Add(ddisp);
+
+            Assert.AreEqual(403.33333333333333333333333333333, ddisp.Value);
+            Assert.AreEqual(403.33333333333333333333333333333, disp.Value);
+        }
+
+        [TestMethod]
         public void SpeedAndTimeGiveDisplacement()
         {
             var spd = new Velocity<Feet, Seconds> { Value = 10 };
