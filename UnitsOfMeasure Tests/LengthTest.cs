@@ -27,5 +27,29 @@ namespace UnitsOfMeasure_Tests
             Volume<Feet> v = x.Multiply(y).Multiply(z);
             Assert.AreEqual(105, v.Value);
         }
+
+        [TestMethod]
+        public void InchesToFeet()
+        {
+            var i = new Inches { Value = 24 };
+            Feet f = i;
+            Assert.AreEqual(2, f.Value);
+        }
+
+        [TestMethod]
+        public void FeetToMiles()
+        {
+            var f = new Feet { Value = 7920 };
+            Miles m = f;
+            Assert.AreEqual(1.5, m.Value);
+        }
+
+        [TestMethod]
+        public void MilesToInches()
+        {
+            var m = new Miles { Value = 3.5 };
+            Inches i = m;
+            Assert.AreEqual(221760, i.Value);
+        }
     }
 }
