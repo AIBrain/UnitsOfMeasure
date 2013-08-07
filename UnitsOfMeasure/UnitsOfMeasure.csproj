@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD3D677F-EABA-4111-8D9C-D317B3B0CF70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitsOfMeasure</RootNamespace>
+    <AssemblyName>UnitsOfMeasure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Angle\Angle.cs" />
+    <Compile Include="Angle\Degrees.cs" />
+    <Compile Include="Angle\Radians.cs" />
+    <Compile Include="Composite.cs" />
+    <Compile Include="Delta.cs" />
+    <Compile Include="Length\Area.cs" />
+    <Compile Include="Length\Imperial\Feet.cs" />
+    <Compile Include="Length\Imperial\Inches.cs" />
+    <Compile Include="Length\Imperial\Miles.cs" />
+    <Compile Include="Length\Length.cs" />
+    <Compile Include="Length\Metric\Centimeters.cs" />
+    <Compile Include="Length\Metric\Kilometers.cs" />
+    <Compile Include="Length\Metric\Meters.cs" />
+    <Compile Include="Length\Metric\Millimeters.cs" />
+    <Compile Include="Length\Volume.cs" />
+    <Compile Include="Mass\Imperial\Ounces.cs" />
+    <Compile Include="Mass\Imperial\Pounds.cs" />
+    <Compile Include="Mass\Imperial\Tons.cs" />
+    <Compile Include="Mass\Mass.cs" />
+    <Compile Include="Mass\Metric\Grams.cs" />
+    <Compile Include="Mass\Metric\Kilograms.cs" />
+    <Compile Include="Mass\Metric\MatricTonne.cs" />
+    <Compile Include="Mass\Metric\Milligrams.cs" />
+    <Compile Include="Mechanics\Acceleration.cs" />
+    <Compile Include="Mechanics\Density.cs" />
+    <Compile Include="Mechanics\Force.cs" />
+    <Compile Include="Mechanics\Impulse.cs" />
+    <Compile Include="Mechanics\Jerk.cs" />
+    <Compile Include="Mechanics\KineticEnergy.cs" />
+    <Compile Include="Mechanics\Momentum.cs" />
+    <Compile Include="Mechanics\Power.cs" />
+    <Compile Include="Mechanics\Pressure.cs" />
+    <Compile Include="Mechanics\Velocity.cs" />
+    <Compile Include="Mechanics\Work.cs" />
+    <Compile Include="Mechanics\Yank.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Time\Rate.cs" />
+    <Compile Include="Reciprocal.cs" />
+    <Compile Include="SpatialProperty.cs" />
+    <Compile Include="Time\Hours.cs" />
+    <Compile Include="Time\Milliseconds.cs" />
+    <Compile Include="Time\Minutes.cs" />
+    <Compile Include="Time\Seconds.cs" />
+    <Compile Include="Time\Time.cs" />
+    <Compile Include="UnitBase.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
