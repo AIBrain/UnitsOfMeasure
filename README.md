@@ -19,6 +19,28 @@ return. Dividing a Change in Velocity by a Change in Time should result
 in an Acceleration. Multiplying an Acceleration by a Change in Time
 should result in a Change in Velocity.
 
+Examples
+========
+Accelerate an object that is in motion
+```c#
+// setup an object with physical properties
+var accel = new Acceleration<Feet, Seconds> { Value = 10 };
+var spd = new Velocity<Feet, Seconds> { Value = 3 };
+var disp = new Feet { Value = 376 };
+
+// calculate the change over time and apply the changes
+var time = new Seconds { Value = 5 };
+Delta<Velocity<Feet, Seconds>> dspd = accel.Multiply(time);
+spd = dspd.Add(spd);
+Delta<Feet> ddisp = spd.Multiply(time);
+disp = disp.Add(ddisp);
+
+Assert.AreEqual(50, dspd.Value);
+Assert.AreEqual(53, spd.Value);
+Assert.AreEqual(265, ddisp.Value);
+Assert.AreEqual(641, disp.Value);
+```
+
 Halp!
 =====
 I'm a programmer, not a physicist. I have a good handle on arithmetic
