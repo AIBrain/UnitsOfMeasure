@@ -59,7 +59,7 @@
     <Compile Include="Mass\Mass.cs" />
     <Compile Include="Mass\Metric\Grams.cs" />
     <Compile Include="Mass\Metric\Kilograms.cs" />
-    <Compile Include="Mass\Metric\MatricTonne.cs" />
+    <Compile Include="Mass\Metric\MetricTonne.cs" />
     <Compile Include="Mass\Metric\Milligrams.cs" />
     <Compile Include="Mechanics\Acceleration.cs" />
     <Compile Include="Mechanics\Density.cs" />

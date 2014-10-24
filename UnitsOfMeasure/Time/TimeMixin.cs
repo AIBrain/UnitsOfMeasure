@@ -5,8 +5,8 @@ namespace UnitsOfMeasure.Time {
             where T : UnitBase, new()
             where U : Time, new() {
             return new T {
-                             Value = a.Value * b.Value
-                         };
+                Value = a.Value * b.Value
+            };
         }
     }
 }
