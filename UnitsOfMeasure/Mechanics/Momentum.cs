@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace UnitsOfMeasure.Mechanics {
 
-namespace UnitsOfMeasure.Mechanics
-{
+    using Mass;
+    using Time;
+
     public class Momentum<M, L, T> : Composite<M, Velocity<L, T>>
-        where M : Mass.Mass, new()
+        where M : Mass, new()
         where L : SpatialProperty, new()
-        where T : Time.Time, new()
-    {
+        where T : Time, new() {
     }
 }

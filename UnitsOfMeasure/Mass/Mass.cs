@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace UnitsOfMeasure.Mass {
 
-namespace UnitsOfMeasure.Mass
-{
-    public abstract class Mass : UnitBase
-    {
+    public abstract class Mass : UnitBase {
     }
 }

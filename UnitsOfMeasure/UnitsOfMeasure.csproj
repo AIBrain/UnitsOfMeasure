@@ -82,6 +82,7 @@
     <Compile Include="Time\Minutes.cs" />
     <Compile Include="Time\Seconds.cs" />
     <Compile Include="Time\Time.cs" />
+    <Compile Include="Time\TimeMixin.cs" />
     <Compile Include="UnitBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace UnitsOfMeasure {
 
-namespace UnitsOfMeasure
-{
-    public class SpatialProperty : UnitBase
-    {
+    public class SpatialProperty : UnitBase {
     }
 }
