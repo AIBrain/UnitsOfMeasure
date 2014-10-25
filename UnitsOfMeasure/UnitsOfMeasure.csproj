@@ -41,7 +41,9 @@
   <ItemGroup>
     <Compile Include="Angle\Angle.cs" />
     <Compile Include="Angle\Degrees.cs" />
+    <Compile Include="Angle\DegreesMixin.cs" />
     <Compile Include="Angle\Radians.cs" />
+    <Compile Include="Angle\RadiansMixin.cs" />
     <Compile Include="Composite.cs" />
     <Compile Include="Length\Area.cs" />
     <Compile Include="Length\Imperial\Feet.cs" />

@@ -1,14 +1,6 @@
 ﻿using System;
 
 namespace UnitsOfMeasure.Angle {
-
-    public static class DegreesMixin {
-
-        public static double Cos( this Degrees a ) {
-            return ( ( Radians )a ).Cos();
-        }
-    }
-
     public class Degrees : Angle {
 
         public static explicit operator Degrees( double v ) {
